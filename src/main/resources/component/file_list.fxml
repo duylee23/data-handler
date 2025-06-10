@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.datadownloadtool.controller.ui.FileListController"
+      fx:id="fileListPane"
+      spacing="10" style="-fx-padding: 10;">
+
+    <TableView fx:id="fileTable" prefHeight="600">
+        <columns>
+            <TableColumn fx:id="colSelect" text=" " prefWidth="30"/>
+            <TableColumn fx:id="colName" text="Name" prefWidth="300"/>
+            <TableColumn fx:id="colCreateTime" text="Create time" prefWidth="200"/>
+            <TableColumn fx:id="colSize" text="File size" prefWidth="100"/>
+            <TableColumn fx:id="colOwner" text="Owner" prefWidth="100"/>
+            <TableColumn fx:id="colGroup" text="Group Name" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button text="Add file" onAction="#handleImport"/>
+        <Button text="Make group" onAction="#handleCreateGroup"/>
+        <Button text="Send result" onAction="#handleSendResult"/>
+        <Button text="Delete" onAction="#handleDelete"/>
+    </HBox>
+
+</VBox>

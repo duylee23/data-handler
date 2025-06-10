@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: data-download-tool
+
+app:
+  local-storage-path: ./local-storage
+  storage:
+    rootFolder: data_download
+    fileListFolder: file_list
+    groupListFolder: group_list

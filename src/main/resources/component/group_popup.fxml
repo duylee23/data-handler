@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.datadownloadtool.controller.ui.GroupPopupController"
+      fx:id="groupPopupPane"
+      spacing="30" alignment="CENTER"
+      style="-fx-padding: 20; -fx-border-color: #003366; -fx-border-width: 2; -fx-background-color: white;"
+      prefWidth="400"
+      prefHeight="200"
+      fillWidth="true"
+>
+    <Label text="Create Group" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+    <GridPane hgap="15" vgap="15" maxWidth="Infinity">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" />
+            <ColumnConstraints hgrow="ALWAYS" />
+        </columnConstraints>
+
+        <Label text="Group name:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <TextField fx:id="groupNameField" promptText="Group_A_02" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="200" maxWidth="Infinity"/>
+
+        <Label text="Type:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <HBox spacing="10" alignment="CENTER_LEFT" GridPane.rowIndex="1" GridPane.columnIndex="1" maxWidth="Infinity">
+            <RadioButton fx:id="radio2D" text="2D"/>
+            <RadioButton fx:id="radio3D" text="3D"/>
+        </HBox>
+    </GridPane>
+    <Button text="Save" onAction="#handleSave"/>
+</VBox>

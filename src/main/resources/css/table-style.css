@@ -1,0 +1,10 @@
+/* Highlight checkbox border on hover */
+.table-cell > .check-box:hover {
+    -fx-cursor: hand; /* pointer cursor */
+}
+
+.table-cell > .check-box {
+    -fx-border-color: transparent;
+    -fx-border-width: 1.5px;
+    -fx-transition: all 0.2s ease-in-out;
+}

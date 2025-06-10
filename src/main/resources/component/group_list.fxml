@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.datadownloadtool.controller.ui.GroupListController"
+      fx:id="groupListPane"
+      spacing="10" style="-fx-padding: 10;">
+
+    <TableView fx:id="groupTable" prefHeight="600">
+        <columns>
+            <TableColumn fx:id="colSelect" text=" " prefWidth="30"/>
+            <TableColumn fx:id="colGroupName" text="Name" prefWidth="200"/>
+            <TableColumn fx:id="colCreatedTime" text="Create time" prefWidth="150"/>
+            <TableColumn fx:id="colGroupSize" text="Size" prefWidth="70"/>
+            <TableColumn fx:id="colOwner" text="Owner" prefWidth="70"/>
+            <TableColumn fx:id="colProgress" text="Progress" prefWidth="200"/>
+            <TableColumn fx:id="colGroupType" text="Group type" prefWidth="90"/>
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="90"/>
+            <TableColumn fx:id="colCompleteTime" text="Complete time" prefWidth="150"/>
+            <TableColumn fx:id="colGoTo" text="Go to " prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button fx:id="handleExecute" text="Execute" onAction="#handleExecute"/>
+    </HBox>
+
+</VBox>

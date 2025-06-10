@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane fx:id="mainRoot" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.datadownloadtool.controller.ui.MainLayoutController"
+            style="-fx-padding: 10;">
+    <left>
+        <VBox spacing="10" alignment="TOP_CENTER" style="-fx-padding: 20 10 10 10;">
+            <Button fx:id="btnFileList"
+                    text="File List"
+                    maxWidth="100"
+                    onAction="#showFileList"
+                    styleClass="toggle-nav-btn "/>
+            <Button fx:id="btnGroupList"
+                    text="Group List"
+                    maxWidth="100"
+                    onAction="#showGroupList"
+                    styleClass="toggle-nav-btn"/>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Button fx:id="btnRefresh"
+                        text="Refresh"
+                        onAction="#handleRefresh" />
+                <ImageView fx:id="refreshIcon"
+                           fitWidth="16" preserveRatio="true"
+                           visible="false"> <!-- Ẩn mặc định -->
+                    <image>
+                        <Image url="@/images/refresh.png"/>
+                    </image>
+                </ImageView>
+            </HBox>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="viewContainer">
+            <fx:include fx:id="fileListView" source="/component/file_list.fxml" />
+            <fx:include fx:id="groupListView" source="/component/group_list.fxml" />
+        </StackPane>
+    </center>
+</BorderPane>
