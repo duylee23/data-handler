@@ -39,6 +39,8 @@ public class GroupRow {
         this.progressBar.setPrefWidth(180);
     }
 
+    public void setCompleteTime(String value) { completeTime.set(value); }
+    public void setStatus(String value) { status.set(value); }
 
     public boolean isSelected() { return selected.get(); }
     public String getGroupName() { return groupName.get(); }

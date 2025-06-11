@@ -13,6 +13,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import java.io.PrintStream;
 import java.util.Objects;
 
 @SpringBootApplication
@@ -23,11 +24,14 @@ public class MainApp extends Application {
 
     @Override
     public void init() {
+        System.out.println(">>> INIT STARTING");
         context = new SpringApplicationBuilder(MainApp.class).run();
+        System.out.println(">>> INIT DONE");
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        System.out.println(">>> START CALLED");
         //before start, init database connection
         DatabaseUtil.initDatabase();
 
@@ -60,6 +64,14 @@ public class MainApp extends Application {
     }
 
     public static void main(String[] args) {
+        try {
+            PrintStream fileOut = new PrintStream("debug.txt");
+            System.setOut(fileOut);
+            System.setErr(fileOut);
+        } catch (Exception e) {
+            e.printStackTrace(); // fallback
+        }
+        System.out.println(">>> Launching app");
         launch(args);
     }
 }

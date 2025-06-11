@@ -13,14 +13,14 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
 
-public class RunScriptTask implements Runnable{
+public class RunScript2dTldTask implements Runnable{
     private final File groupFolder;
     private final ProgressBar progressBar;
     private final String scriptPath; // absolute path to .py
     private final String outputPath; // output path
     private final Consumer<Boolean> onFinish;
 
-    public RunScriptTask(File groupFolder, ProgressBar progressBar, String scriptPath, String outputPath, Consumer<Boolean> onFinish) {
+    public RunScript2dTldTask(File groupFolder, ProgressBar progressBar, String scriptPath, String outputPath, Consumer<Boolean> onFinish) {
         this.groupFolder = groupFolder;
         this.progressBar = progressBar;
         this.scriptPath = scriptPath;
@@ -30,18 +30,14 @@ public class RunScriptTask implements Runnable{
 
     @Override
     public void run() {
-        System.out.println("ZO DAY");
         try{
-            System.out.println("Running Python script for group: " + groupFolder.getName());
+            System.out.println("Running Python 2D TLD script for group: " + groupFolder.getName());
 
-            ProcessBuilder pb = new ProcessBuilder("python", scriptPath,
-                    "--root_path", groupFolder.getAbsolutePath().replace(File.separator, "/"),
-                    "--output_path", outputPath);
-
+            ProcessBuilder pb = new ProcessBuilder("python", scriptPath, groupFolder.getAbsolutePath().replace(File.separator, "/"));
             pb.redirectErrorStream(true);
             Process process = pb.start();
             int pid = (int) process.pid();
-            System.out.println("🔍 Script started with PID: " + pid);
+            System.out.println("🔍 Script Python 2D TLD started with PID: " + pid);
             // 🔁 Tạo tiến trình giả lập progress từ 0.5 → 1.0
             ScheduledExecutorService scriptProgressScheduler = Executors.newSingleThreadScheduledExecutor();
             AtomicInteger tick = new AtomicInteger(0);
@@ -62,7 +58,6 @@ public class RunScriptTask implements Runnable{
                     System.out.println("[PYTHON] " + line);
                 }
             }
-
             int exitCode = process.waitFor();
             scriptProgressScheduler.shutdownNow();
 

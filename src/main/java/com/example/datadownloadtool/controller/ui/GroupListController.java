@@ -2,10 +2,11 @@ package com.example.datadownloadtool.controller.ui;
 
 import com.example.datadownloadtool.dao.GroupDAO;
 import com.example.datadownloadtool.model.GroupRow;
+import com.example.datadownloadtool.thread.executor.ScriptTaskFactory;
 import com.example.datadownloadtool.thread.executor.TaskExecutor;
 import com.example.datadownloadtool.thread.task.ProgressRarTask;
 import com.example.datadownloadtool.thread.task.ProgressUnzipTask;
-import com.example.datadownloadtool.thread.task.RunScriptTask;
+import com.example.datadownloadtool.thread.task.RunScript3dOdTask;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.scene.layout.VBox;
@@ -132,27 +133,27 @@ public class GroupListController {
                 int done = completed.incrementAndGet();
                 // When all unzips are done, trigger Python script
                 if (done == total) {
+
                     // Dừng tiến trình giả lập progress nếu chưa hết
                     unzipProgressScheduler.shutdownNow();
 
                     // Bắt đầu chạy script
-                    TaskExecutor.submit(new RunScriptTask(
-                            group.getGroupFolder(),
-                            group.getProgressBar(),
-                            "D:/data_download/script/convert_pcd_3d_visual.py",
-                            "D:/data_download/result",
-                            success -> {
-                                if (success) {
-                                    Platform.runLater(() -> group.getProgressBar().setProgress(1.0));
-                                    groupDAO.updateGroup(group.getGroupName(), "EXECUTED", commonUtil.getCurrentTime());
-                                    commonUtil.showToast("Group : " + group.getGroupName() + " executed successfully.", true, groupListPane);
-                                } else {
-                                    // Không set 1.0, giữ nguyên ở 0.5
-                                    groupDAO.updateGroup(group.getGroupName(), "EXECUTED", "");
-                                    commonUtil.showToast("Group : " + group.getGroupName() + " execution failed.", false, groupListPane);
-                                }
-                            }
-                    ));
+                    Runnable scriptTask = ScriptTaskFactory.createScriptTask(group, success -> {
+                        if (success) {
+                            Platform.runLater(() -> {
+                                group.getProgressBar().setProgress(1.0);
+                                group.setStatus("EXECUTED");
+                                group.setCompleteTime(commonUtil.formatDateTime(commonUtil.getCurrentTime()));
+                            });
+                            groupDAO.updateGroup(group.getGroupName(), "EXECUTED", commonUtil.getCurrentTime());
+                            commonUtil.showToast("Group : " + group.getGroupName() + " executed successfully.", true, groupListPane);
+                        } else {
+                            // Không set 1.0, giữ nguyên ở 0.5
+                            groupDAO.updateGroup(group.getGroupName(), "EXECUTED", "");
+                            commonUtil.showToast("Group : " + group.getGroupName() + " execution failed.", false, groupListPane);
+                        }
+                    });
+                    TaskExecutor.submit(scriptTask);
                 }
             };
             // Immediately show visual progress on UI to indicate it's in progress

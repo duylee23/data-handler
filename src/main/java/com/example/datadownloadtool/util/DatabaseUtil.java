@@ -46,7 +46,8 @@ public class DatabaseUtil {
         }
         catch (
                 SQLException e) {
-            e.printStackTrace();
+            System.err.println("Database init failed: " + e.getMessage());
+            throw new RuntimeException(e);
         }
     }
 }
