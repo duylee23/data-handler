@@ -16,7 +16,7 @@ public class DatabaseManager {
             String localAppData = System.getenv("LOCALAPPDATA");
             Path dbPath = Paths.get(localAppData, "DataDownloadTool", DB_NAME);
             Files.createDirectories(dbPath.getParent());
-            System.out.println("Using DB at: " + dbPath);
+//            System.out.println("Using DB at: " + dbPath);
             String dbUrl = "jdbc:sqlite:" + dbPath.toString();
             return DriverManager.getConnection(dbUrl);
         } catch (Exception e) {

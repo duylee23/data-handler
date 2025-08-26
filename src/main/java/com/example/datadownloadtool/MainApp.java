@@ -1,77 +1,78 @@
 package com.example.datadownloadtool;
 
 import com.example.datadownloadtool.config.StorageConfig;
+import com.example.datadownloadtool.controller.LoginController;
+import com.example.datadownloadtool.thread.task.ScriptTaskManager;
 import com.example.datadownloadtool.util.DatabaseUtil;
 import javafx.application.Application;
+import javafx.application.HostServices;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import java.io.PrintStream;
-import java.util.Objects;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 @SpringBootApplication
 @EnableConfigurationProperties(StorageConfig.class)
+@Slf4j
 public class MainApp extends Application {
 
     private ConfigurableApplicationContext context;
-
     @Override
     public void init() {
-        System.out.println(">>> INIT STARTING");
         context = new SpringApplicationBuilder(MainApp.class).run();
-        System.out.println(">>> INIT DONE");
+        // ✅ Lưu lại HostServices từ JavaFX
+        this.setHostServices(getHostServices());
     }
+    @Setter
+    private HostServices hostServices;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        System.out.println(">>> START CALLED");
+        log.info(">>> START CALLED");
         //before start, init database connection
         DatabaseUtil.initDatabase();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/main_layout.fxml"));
-        loader.setControllerFactory(context::getBean);
-        Parent root = loader.load();
+        // 1️⃣ Show login stage
+        FXMLLoader loginLoader = new FXMLLoader(getClass().getResource("/component/login.fxml"));
+        loginLoader.setControllerFactory(context::getBean);
+        Parent loginRoot = loginLoader.load();
 
-        Scene scene = new Scene(root, 1600, 800);
-        // Set the stylesheets for the scene
-        scene.getStylesheets().addAll(
-                Objects.requireNonNull(getClass().getResource("/css/table-style.css")).toExternalForm()
-                , Objects.requireNonNull(getClass().getResource("/css/style.css")).toExternalForm()
-        );
-        primaryStage.setTitle("Data Handler");
-        //load the icon
-        try{
-            primaryStage.getIcons().addAll(
-                    new Image(Objects.requireNonNull(getClass().getResourceAsStream("/images/logo.png")))
-            );
-        } catch (Exception e) {
-            System.err.println("Failed to load icon: " + e.getMessage());
-        }
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        // 3️⃣ Truyền primaryStage vào LoginController
+        LoginController loginController = loginLoader.getController();
+        loginController.setPrimaryStage(primaryStage);
+        loginController.setHostServices(hostServices);
+
+        Stage loginStage = new Stage();
+        loginStage.setTitle("Đăng nhập");
+        loginStage.setScene(new Scene(loginRoot));
+        loginStage.setResizable(true);
+        loginStage.showAndWait(); // ❗ Wait until login closes
     }
 
     @Override
     public void stop() {
+        log.warn("Application STOPPING... stopping all running scripts and groups");
+        ScriptTaskManager.getInstance().stopAll();
         context.close();
     }
 
     public static void main(String[] args) {
         try {
-            PrintStream fileOut = new PrintStream("debug.txt");
-            System.setOut(fileOut);
-            System.setErr(fileOut);
-        } catch (Exception e) {
-            e.printStackTrace(); // fallback
+            Files.writeString(Path.of("log_start.txt"), "App started");
+        } catch (IOException e) {
+            e.printStackTrace();
+            log.error("Error while loading", e);
         }
-        System.out.println(">>> Launching app");
         launch(args);
     }
 }

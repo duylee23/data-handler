@@ -27,6 +27,14 @@ public class DatabaseUtil {
             );
         """;
 
+        String createConfigTable = """
+                CREATE TABLE IF NOT EXISTS config (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    key TEXT NOT NULL UNIQUE,
+                    value TEXT NOT NULL
+                );
+                """;
+
         String createGroupFilesTable = """
             CREATE TABLE IF NOT EXISTS group_files (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -37,12 +45,33 @@ public class DatabaseUtil {
                 FOREIGN KEY(group_name) REFERENCES groups(name) ON DELETE CASCADE
             );
         """;
+
+
+        String createUsersTable = """
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT UNIQUE NOT NULL,
+        password TEXT NOT NULL,
+        role TEXT NOT NULL
+    );
+""";
+
+        String insertAdmin = """
+    INSERT OR IGNORE INTO users (username, password, role) VALUES (
+        'admin',
+        '$2a$10$lItox2qs2TYKgF83htqa/./Krlqze7dlzU9ULhfEscoe6kM4cafvu',
+        'admin'
+    );
+""";
+
         try (
                 Connection conn = DatabaseManager.getConnection();
                 Statement stmt = conn.createStatement()) {
                 stmt.execute(createGroupsTable);
                 stmt.execute(createGroupFilesTable);
-            System.out.println("✅ Tables 'groups' and 'group_files' initialized");
+                stmt.execute(createConfigTable);
+                stmt.execute(createUsersTable);
+                stmt.execute(insertAdmin);
         }
         catch (
                 SQLException e) {

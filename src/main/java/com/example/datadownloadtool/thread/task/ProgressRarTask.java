@@ -2,14 +2,15 @@ package com.example.datadownloadtool.thread.task;
 import javafx.application.Platform;
 
 import java.io.*;
+import java.util.function.Consumer;
 
 public class ProgressRarTask implements Runnable{
     private final File rarFile;
     private final File outputDir;
-    private final Runnable onFinishCallback;
+    private final Consumer<Boolean> onFinishCallback;
 
 
-    public ProgressRarTask(File rarFile, File outputDir,  Runnable onFinishCallback) {
+    public ProgressRarTask(File rarFile, File outputDir,  Consumer<Boolean> onFinishCallback) {
         this.rarFile = rarFile;
         this.outputDir = outputDir;
         this.onFinishCallback = onFinishCallback;
@@ -17,6 +18,7 @@ public class ProgressRarTask implements Runnable{
 
     @Override
     public void run() {
+        boolean isSuccess = false;
         System.out.println("Starting RAR extraction using external command: " + rarFile.getName());
         try {
             if (!outputDir.exists()) {
@@ -42,7 +44,8 @@ public class ProgressRarTask implements Runnable{
             }
 
             int exitCode = process.waitFor();
-            if (exitCode == 0) {
+            isSuccess = exitCode == 0;
+            if (isSuccess) {
                 System.out.println("✅ RAR extraction completed: " + rarFile.getName());
             } else {
                 System.err.println("❌ RAR extraction failed with exit code: " + exitCode + " for file: " + rarFile.getName());
@@ -52,9 +55,12 @@ public class ProgressRarTask implements Runnable{
             System.err.println("❌ Failed to extract RAR: " + rarFile.getName());
             e.printStackTrace();
         } finally {
+            boolean finalSuccess = isSuccess;
             Platform.runLater(() -> {
-                System.out.println("🔁 Calling onFinishCallback for: " + rarFile.getName());
-                if (onFinishCallback != null) onFinishCallback.run();
+                System.out.println("🔁 Calling onFinishCallback for RAR: " + rarFile.getName() + " → success = " + finalSuccess);
+                if(onFinishCallback != null) {
+                    onFinishCallback.accept(finalSuccess);
+                }
             });
         }
     }

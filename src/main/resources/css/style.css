@@ -22,3 +22,7 @@
     -fx-border-color: #0078D7;
     -fx-effect: dropshadow(one-pass-box, rgba(0,120,215,0.4), 4, 0, 0, 2);
 }
+
+.login-pane {
+    -fx-padding: 20 20 20 20;
+}

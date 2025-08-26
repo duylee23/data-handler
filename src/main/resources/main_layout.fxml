@@ -7,7 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 <BorderPane fx:id="mainRoot" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.datadownloadtool.controller.ui.MainLayoutController"
+            fx:controller="com.example.datadownloadtool.controller.MainLayoutController"
             style="-fx-padding: 10;">
     <left>
         <VBox spacing="10" alignment="TOP_CENTER" style="-fx-padding: 20 10 10 10;">
@@ -21,6 +21,12 @@
                     maxWidth="100"
                     onAction="#showGroupList"
                     styleClass="toggle-nav-btn"/>
+
+            <Button fx:id="adminSpaceButton"
+                    text="ADMIN SPACE"
+                    onAction="#handleAdminSpace"
+                    visible="false" />
+
             <HBox spacing="10" alignment="CENTER_LEFT">
                 <Button fx:id="btnRefresh"
                         text="Refresh"

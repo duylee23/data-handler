@@ -1,7 +1,6 @@
 package com.example.datadownloadtool.util;
 
 import com.example.datadownloadtool.config.StorageConfig;
-import com.example.datadownloadtool.model.FileRow;
 import javafx.animation.*;
 import javafx.application.Platform;
 import javafx.geometry.Bounds;
@@ -9,24 +8,21 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Popup;
-import javafx.stage.Stage;
+import javafx.stage.Window;
 import javafx.util.Callback;
 import javafx.util.Duration;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -34,12 +30,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.FileTime;
-import java.sql.Time;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Component
@@ -80,19 +74,6 @@ public class CommonUtil {
             return "";
         }
         return DATE_FORMATTER.format(LocalDateTime.parse(dateTime));
-    }
-
-    public void initStoragePath(){
-        try{
-            Path baseDir = Paths.get("D:/",storageConfig.getRootFolder());
-            fileListDir = baseDir.resolve(storageConfig.getFileListFolder());
-            groupListDir = baseDir.resolve(storageConfig.getGroupListFolder());
-            Files.createDirectories(fileListDir);
-            Files.createDirectories(groupListDir);
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException("Failed to initialize file list directories", e);
-        }
     }
 
     public void showToast(String message, boolean success, Node relativeToNode) {

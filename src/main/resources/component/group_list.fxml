@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 
 <VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.datadownloadtool.controller.ui.GroupListController"
+      fx:controller="com.example.datadownloadtool.controller.GroupListController"
       fx:id="groupListPane"
       spacing="10" style="-fx-padding: 10;">
 

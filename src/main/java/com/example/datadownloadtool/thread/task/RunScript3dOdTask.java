@@ -2,23 +2,31 @@ package com.example.datadownloadtool.thread.task;
 
 import javafx.application.Platform;
 import javafx.scene.control.ProgressBar;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Optional;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
+import java.util.stream.Stream;
 
-public class RunScript3dOdTask implements Runnable{
+@Slf4j
+public class RunScript3dOdTask implements ScriptTask{
     private final File groupFolder;
     private final ProgressBar progressBar;
     private final String scriptPath; // absolute path to .py
     private final String outputPath; // output path
     private final Consumer<Boolean> onFinish;
+    private Process process;
 
     public RunScript3dOdTask(File groupFolder, ProgressBar progressBar, String scriptPath, String outputPath, Consumer<Boolean> onFinish) {
         this.groupFolder = groupFolder;
@@ -30,6 +38,15 @@ public class RunScript3dOdTask implements Runnable{
 
     @Override
     public void run() {
+        long totalJsonFile = 0;
+        try {
+            totalJsonFile = Files.walk(groupFolder.toPath())
+                    .filter(p -> p.toString().toLowerCase().endsWith(".json"))
+                    .count();
+        } catch (IOException e) {
+            log.error("Failed to count json files in group: {}", groupFolder.getName(), e);
+        }
+
         try{
             System.out.println("Running Python script for group: " + groupFolder.getName());
 
@@ -39,22 +56,44 @@ public class RunScript3dOdTask implements Runnable{
 
             pb.redirectErrorStream(true);
             Process process = pb.start();
+            this.process = process;
             int pid = (int) process.pid();
             System.out.println("🔍 Script started with PID: " + pid);
-            // 🔁 Tạo tiến trình giả lập progress từ 0.5 → 1.0
+            final long totalJsonFileFinal = totalJsonFile;
+            System.out.println("🔍 Total json files counted: " + totalJsonFileFinal);
+
             ScheduledExecutorService scriptProgressScheduler = Executors.newSingleThreadScheduledExecutor();
-            AtomicInteger tick = new AtomicInteger(0);
-            final int maxTicks = 100;
+            AtomicInteger lastLogged = new AtomicInteger(0); // ✅ nhớ lần cuối đã log bao nhiêu ảnh
+
+            Path finalOutputPath = Paths.get(outputPath);
+            String groupName = groupFolder.getName();
 
             scriptProgressScheduler.scheduleAtFixedRate(() -> {
-                int current = tick.incrementAndGet();
-                double progress = 0.5 + Math.min(0.5, (current / (double) maxTicks) * 0.5);
-                Platform.runLater(() -> progressBar.setProgress(progress));
-
-                if (current >= maxTicks) {
-                    scriptProgressScheduler.shutdown();
+                try (Stream<Path> stream = Files.walk(finalOutputPath)){
+                    Optional<Path> match = stream
+                            .filter(Files::isDirectory)
+                            .filter(p -> p.getFileName().toString().equals(groupName))
+                            .findFirst();
+                    if(match.isEmpty()) return;
+                    Path imageRoot = match.get();
+                    long done = Files.walk(imageRoot)
+                            .filter(p -> {
+                                String name = p.getFileName().toString().toLowerCase();
+                                return name.endsWith(".jpg") || name.endsWith(".png");
+                            }).count();
+                    if (done > lastLogged.get()) {
+                        double percent = ((double) done / totalJsonFileFinal) * 100.0;
+                        double progress =((double) done / totalJsonFileFinal);
+                        Platform.runLater(() -> progressBar.setProgress(progress));
+                        System.out.printf("📦 Progress: %d/%d (%.2f%%)%n", done, totalJsonFileFinal, percent);
+                        lastLogged.set((int) done);
+                    }
+                } catch (IOException e) {
+                    System.err.println("❌ Failed to count progress images: " + e.getMessage());
                 }
             }, 0, 1, TimeUnit.SECONDS);
+
+
             try(BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
@@ -72,6 +111,25 @@ public class RunScript3dOdTask implements Runnable{
         } catch(IOException | InterruptedException e) {
             System.err.println("Failed to run script: " + e.getMessage());
             e.printStackTrace();
+        } finally {
+            ScriptTaskManager.getInstance().unregister(this);
         }
+    }
+
+    public void stopScript() {
+        if (process != null && process.isAlive()) {
+            System.out.println("🛑 Killing Python script: " + groupFolder.getName());
+            process.destroy();
+        }
+    }
+
+    @Override
+    public String getGroupName() {
+        return groupFolder.getName();
+    }
+
+    @Override
+    public boolean isAlive() {
+        return process != null && process.isAlive();
     }
 }

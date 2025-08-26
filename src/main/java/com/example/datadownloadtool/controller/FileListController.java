@@ -1,10 +1,12 @@
-package com.example.datadownloadtool.controller.ui;
+package com.example.datadownloadtool.controller;
 
 import com.example.datadownloadtool.dao.GroupDAO;
+import com.example.datadownloadtool.model.FileRow;
 import com.example.datadownloadtool.thread.executor.TaskExecutor;
 import com.example.datadownloadtool.thread.task.ImportTask;
 import com.example.datadownloadtool.util.CommonUtil;
-import com.example.datadownloadtool.model.FileRow;
+import com.example.datadownloadtool.util.StorageUtil;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -19,24 +21,36 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.util.*;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 @Component
 @RequiredArgsConstructor
+@Slf4j
 public class FileListController {
     //init observable list for files
     private final ObservableList<FileRow> $files = FXCollections.observableArrayList();
     private final CommonUtil commonUtil;
     private final GroupListController groupListController;
     private final GroupDAO groupDAO = new GroupDAO();
+    private final StorageUtil storageUtil = StorageUtil.getInstance(); // use singleton
+
+    @Autowired
+    private ApplicationContext context;
 
     @FXML
     private TableView<FileRow> fileTable;
@@ -50,7 +64,13 @@ public class FileListController {
 
     @FXML public void initialize() {
         //create directories for files if not exist
-        this.commonUtil.initStoragePath();
+        Platform.runLater(() -> {
+            storageUtil.initStoragePath(fileTable.getScene().getWindow());
+            log.info("fileTable.getScene().getWindow()" + fileTable.getScene().getWindow());
+            // Auto load from directory
+            refreshFileList();
+            groupListController.refreshGroupList();
+        });
 
         // setup columns
         colSelect.setCellFactory(CheckBoxTableCell.forTableColumn(colSelect));
@@ -89,9 +109,6 @@ public class FileListController {
                 setOpacity(item.isPending() ? 0.4 : 1.0);
             }
         });
-
-        // Auto load from directory
-        refreshFileList();
     }
 
     @FXML public void handleImport() throws IOException {
@@ -105,7 +122,7 @@ public class FileListController {
         //allow selecting multiple files
         List<File> selectedFiles = fileChooser.showOpenMultipleDialog(fileTable.getScene().getWindow());
         if (selectedFiles != null) {
-            Path dirPath = this.commonUtil.getFileListDir();
+            Path dirPath = storageUtil.getFileListDir();
             for (File file : selectedFiles) {
                 // if file already exists, skip
                 if($files.stream().anyMatch(f -> f.getName().equals(file.getName()))) { continue;}
@@ -132,12 +149,13 @@ public class FileListController {
                 TaskExecutor.submit(importTask);
             }
         }
-        System.out.println("Import clicked");
+       log.info("Import clicked");
     }
 
     @FXML public void handleCreateGroup() {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/component/group_popup.fxml"));
+            fxmlLoader.setControllerFactory(context::getBean);
             Parent root = fxmlLoader.load();
             GroupPopupController groupPopupController = fxmlLoader.getController();
             Stage popupStage = new Stage();
@@ -145,6 +163,7 @@ public class FileListController {
             popupStage.setTitle("Create Group");
             popupStage.setScene(new Scene(root));
             groupPopupController.setPopupStage(popupStage);
+
             List<FileRow> selectedFiles = this.getSelectedFiles();
             if (selectedFiles.isEmpty()) {
                 Alert alert = new Alert(Alert.AlertType.WARNING, "No files selected for grouping.", ButtonType.OK);
@@ -165,6 +184,9 @@ public class FileListController {
                 this.refreshGroupNames();
             });
 
+            //truyền callback cho popup
+            groupPopupController.setOnGroupRowCreated(groupListController::addGroupRow);
+
             popupStage.showAndWait();
         } catch (IOException e) {
             e.printStackTrace();
@@ -173,7 +195,7 @@ public class FileListController {
     }
 
     @FXML public void handleSendResult() {
-        System.out.println("Send result clicked");
+        log.info("Send result clicked");
     }
 
     @FXML public void handleDelete() {
@@ -190,7 +212,7 @@ public class FileListController {
 
     //load file từ thư mục trong máy
     public void refreshFileList() {
-        Path dirPath = this.commonUtil.getFileListDir();
+        Path dirPath = storageUtil.getFileListDir();
         Map<Path, String> fileGroupMap = this.groupDAO.getGroupFileMap();
         try (Stream<Path> paths = Files.list(dirPath)) {
             $files.clear();
@@ -213,7 +235,7 @@ public class FileListController {
                             path.toAbsolutePath()
                     ));
                 } catch (IOException e) {
-                    System.out.println("Failed to load file: " + path.getFileName());
+                    log.info("Failed to load file: " + path.getFileName());
                     e.printStackTrace();
                 }
             });
@@ -289,7 +311,7 @@ public class FileListController {
             String newGroupName = groupFileMap.getOrDefault(file.getPath(), "");
             file.groupNameProperty().set(newGroupName);
         }
-        System.out.println("✅ File group names updated in-place");
+        log.info("✅ File group names updated in-place");
     }
 
     private void deleteDirectoryRecursively(Path dir) throws IOException {

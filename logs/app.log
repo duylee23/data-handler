@@ -1,0 +1,378 @@
+2025-06-30 15:36:46.671 INFO  o.s.boot.SpringApplication - Starting application using Java 21.0.6 with PID 34116 (started by Admin in D:\Working\data-download-tool)
+2025-06-30 15:36:46.672 INFO  o.s.boot.SpringApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-30 15:36:46.718 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-30 15:36:47.436 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-30 15:36:47.450 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-30 15:36:47.452 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-30 15:36:47.453 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-06-30 15:36:47.504 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-30 15:36:47.505 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 787 ms
+2025-06-30 15:36:49.148 WARN  java.util.prefs - Could not open/create prefs root node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegCreateKeyEx(...) returned error code 5.
+2025-06-30 15:36:49.148 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002.
+2025-06-30 15:36:49.149 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:36:49.149 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002.
+2025-06-30 15:36:49.149 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:36:49.149 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002.
+2025-06-30 15:36:49.149 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:36:49.149 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002.
+2025-06-30 15:36:49.149 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:36:49.417 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-30 15:36:49.436 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-30 15:36:49.443 INFO  o.s.boot.SpringApplication - Started application in 3.339 seconds (process running for 4.792)
+2025-06-30 15:36:49.460 INFO  c.example.datadownloadtool.MainApp - >>> START CALLED
+2025-06-30 15:37:01.528 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool\util at root 0xffffffff80000002.
+2025-06-30 15:37:01.528 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool\util at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:37:05.942 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool\util at root 0xffffffff80000002.
+2025-06-30 15:37:05.943 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool\util at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:38:56.182 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-30 15:38:56.188 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-30 15:53:02.218 INFO  o.s.boot.SpringApplication - Starting application using Java 21.0.6 with PID 6508 (started by Admin in D:\Working\data-download-tool)
+2025-06-30 15:53:02.219 INFO  o.s.boot.SpringApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-30 15:53:02.264 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-30 15:53:02.986 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-30 15:53:03.004 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-30 15:53:03.009 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-30 15:53:03.009 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-06-30 15:53:03.057 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-30 15:53:03.058 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 794 ms
+2025-06-30 15:53:04.704 WARN  java.util.prefs - Could not open/create prefs root node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegCreateKeyEx(...) returned error code 5.
+2025-06-30 15:53:04.705 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002.
+2025-06-30 15:53:04.705 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:53:04.705 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002.
+2025-06-30 15:53:04.705 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:53:04.706 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002.
+2025-06-30 15:53:04.706 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:53:04.706 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002.
+2025-06-30 15:53:04.706 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:53:04.962 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-30 15:53:04.978 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-30 15:53:04.986 INFO  o.s.boot.SpringApplication - Started application in 3.189 seconds (process running for 4.547)
+2025-06-30 15:53:05.002 INFO  c.example.datadownloadtool.MainApp - >>> START CALLED
+2025-06-30 15:53:19.368 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool\util at root 0xffffffff80000002.
+2025-06-30 15:53:19.368 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool\util at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:53:41.229 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool\util at root 0xffffffff80000002.
+2025-06-30 15:53:41.230 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool\util at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:53:55.853 INFO  c.e.d.c.ui.MainLayoutController - Refresh clicked
+2025-06-30 15:53:56.383 INFO  c.e.d.c.ui.MainLayoutController - Refresh clicked
+2025-06-30 15:53:56.554 INFO  c.e.d.c.ui.MainLayoutController - Refresh clicked
+2025-06-30 15:54:17.282 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-30 15:54:17.284 INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-06-30 15:54:17.289 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-30 15:54:17.290 INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-06-30 15:54:37.159 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.datadownloadtool.DataDownloadToolApplicationTests]: DataDownloadToolApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-06-30 15:54:37.290 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.datadownloadtool.MainApp for test class com.example.datadownloadtool.DataDownloadToolApplicationTests
+2025-06-30 15:54:37.440 INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2025-06-30 15:54:37.720 INFO  c.e.d.DataDownloadToolApplicationTests - Starting DataDownloadToolApplicationTests using Java 21.0.6 with PID 10344 (started by Admin in D:\Working\data-download-tool)
+2025-06-30 15:54:37.720 INFO  c.e.d.DataDownloadToolApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-06-30 15:54:40.137 WARN  java.util.prefs - Could not open/create prefs root node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegCreateKeyEx(...) returned error code 5.
+2025-06-30 15:54:40.138 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002.
+2025-06-30 15:54:40.138 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:54:40.138 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002.
+2025-06-30 15:54:40.138 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:54:40.139 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002.
+2025-06-30 15:54:40.139 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:54:40.139 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002.
+2025-06-30 15:54:40.139 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:54:40.600 INFO  c.e.d.DataDownloadToolApplicationTests - Started DataDownloadToolApplicationTests in 3.172 seconds (process running for 4.607)
+2025-06-30 15:55:12.953 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.datadownloadtool.DataDownloadToolApplicationTests]: DataDownloadToolApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-06-30 15:55:13.157 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.datadownloadtool.MainApp for test class com.example.datadownloadtool.DataDownloadToolApplicationTests
+2025-06-30 15:55:13.677 INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2025-06-30 15:55:14.154 INFO  c.e.d.DataDownloadToolApplicationTests - Starting DataDownloadToolApplicationTests using Java 21.0.6 with PID 11196 (started by Admin in D:\Working\data-download-tool)
+2025-06-30 15:55:14.155 INFO  c.e.d.DataDownloadToolApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-06-30 15:55:16.671 WARN  java.util.prefs - Could not open/create prefs root node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegCreateKeyEx(...) returned error code 5.
+2025-06-30 15:55:16.673 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002.
+2025-06-30 15:55:16.674 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:55:16.674 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002.
+2025-06-30 15:55:16.675 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:55:16.675 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002.
+2025-06-30 15:55:16.676 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:55:16.676 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002.
+2025-06-30 15:55:16.677 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:55:17.152 INFO  c.e.d.DataDownloadToolApplicationTests - Started DataDownloadToolApplicationTests in 3.502 seconds (process running for 5.351)
+2025-06-30 15:57:59.845 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.datadownloadtool.DataDownloadToolApplicationTests]: DataDownloadToolApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-06-30 15:57:59.987 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.datadownloadtool.MainApp for test class com.example.datadownloadtool.DataDownloadToolApplicationTests
+2025-06-30 15:58:00.139 INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2025-06-30 15:58:00.419 INFO  c.e.d.DataDownloadToolApplicationTests - Starting DataDownloadToolApplicationTests using Java 21.0.6 with PID 21376 (started by Admin in D:\Working\data-download-tool)
+2025-06-30 15:58:00.420 INFO  c.e.d.DataDownloadToolApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-06-30 15:58:02.861 WARN  java.util.prefs - Could not open/create prefs root node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegCreateKeyEx(...) returned error code 5.
+2025-06-30 15:58:02.863 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002.
+2025-06-30 15:58:02.865 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:58:02.866 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002.
+2025-06-30 15:58:02.866 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:58:02.867 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002.
+2025-06-30 15:58:02.868 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:58:02.868 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002.
+2025-06-30 15:58:02.869 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:58:03.350 INFO  c.e.d.DataDownloadToolApplicationTests - Started DataDownloadToolApplicationTests in 3.222 seconds (process running for 4.464)
+2025-06-30 15:59:52.534 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.datadownloadtool.DataDownloadToolApplicationTests]: DataDownloadToolApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-06-30 15:59:52.669 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.datadownloadtool.MainApp for test class com.example.datadownloadtool.DataDownloadToolApplicationTests
+2025-06-30 15:59:52.831 INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2025-06-30 15:59:53.126 INFO  c.e.d.DataDownloadToolApplicationTests - Starting DataDownloadToolApplicationTests using Java 21.0.6 with PID 29060 (started by Admin in D:\Working\data-download-tool)
+2025-06-30 15:59:53.127 INFO  c.e.d.DataDownloadToolApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-06-30 15:59:55.559 WARN  java.util.prefs - Could not open/create prefs root node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegCreateKeyEx(...) returned error code 5.
+2025-06-30 15:59:55.561 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002.
+2025-06-30 15:59:55.562 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:59:55.563 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002.
+2025-06-30 15:59:55.563 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:59:55.563 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002.
+2025-06-30 15:59:55.564 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:59:55.564 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002.
+2025-06-30 15:59:55.565 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 15:59:56.014 INFO  c.e.d.DataDownloadToolApplicationTests - Started DataDownloadToolApplicationTests in 3.194 seconds (process running for 4.504)
+2025-06-30 16:02:31.368 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.datadownloadtool.DataDownloadToolApplicationTests]: DataDownloadToolApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-06-30 16:02:31.493 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.datadownloadtool.MainApp for test class com.example.datadownloadtool.DataDownloadToolApplicationTests
+2025-06-30 16:02:31.648 INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2025-06-30 16:02:31.921 INFO  c.e.d.DataDownloadToolApplicationTests - Starting DataDownloadToolApplicationTests using Java 21.0.6 with PID 6188 (started by Admin in D:\Working\data-download-tool)
+2025-06-30 16:02:31.921 INFO  c.e.d.DataDownloadToolApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-06-30 16:02:34.318 WARN  java.util.prefs - Could not open/create prefs root node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegCreateKeyEx(...) returned error code 5.
+2025-06-30 16:02:34.320 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002.
+2025-06-30 16:02:34.320 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:02:34.321 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002.
+2025-06-30 16:02:34.322 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:02:34.322 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002.
+2025-06-30 16:02:34.322 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:02:34.323 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002.
+2025-06-30 16:02:34.323 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:02:34.789 INFO  c.e.d.DataDownloadToolApplicationTests - Started DataDownloadToolApplicationTests in 3.152 seconds (process running for 4.406)
+2025-06-30 16:21:46.525 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.datadownloadtool.DataDownloadToolApplicationTests]: DataDownloadToolApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-06-30 16:21:46.669 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.datadownloadtool.MainApp for test class com.example.datadownloadtool.DataDownloadToolApplicationTests
+2025-06-30 16:21:46.827 INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2025-06-30 16:21:47.117 INFO  c.e.d.DataDownloadToolApplicationTests - Starting DataDownloadToolApplicationTests using Java 21.0.6 with PID 34572 (started by Admin in D:\Working\data-download-tool)
+2025-06-30 16:21:47.119 INFO  c.e.d.DataDownloadToolApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-06-30 16:21:49.534 WARN  java.util.prefs - Could not open/create prefs root node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegCreateKeyEx(...) returned error code 5.
+2025-06-30 16:21:49.536 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002.
+2025-06-30 16:21:49.536 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:21:49.537 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002.
+2025-06-30 16:21:49.537 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:21:49.537 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002.
+2025-06-30 16:21:49.537 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:21:49.537 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002.
+2025-06-30 16:21:49.537 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:21:50.002 INFO  c.e.d.DataDownloadToolApplicationTests - Started DataDownloadToolApplicationTests in 3.187 seconds (process running for 4.689)
+2025-06-30 16:26:15.391 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.datadownloadtool.DataDownloadToolApplicationTests]: DataDownloadToolApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-06-30 16:26:15.541 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.datadownloadtool.MainApp for test class com.example.datadownloadtool.DataDownloadToolApplicationTests
+2025-06-30 16:26:15.726 INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2025-06-30 16:26:16.042 INFO  c.e.d.DataDownloadToolApplicationTests - Starting DataDownloadToolApplicationTests using Java 21.0.6 with PID 14004 (started by Admin in D:\Working\data-download-tool)
+2025-06-30 16:26:16.043 INFO  c.e.d.DataDownloadToolApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-06-30 16:26:18.523 WARN  java.util.prefs - Could not open/create prefs root node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegCreateKeyEx(...) returned error code 5.
+2025-06-30 16:26:18.523 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002.
+2025-06-30 16:26:18.524 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:26:18.524 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002.
+2025-06-30 16:26:18.524 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:26:18.524 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002.
+2025-06-30 16:26:18.524 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:26:18.524 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002.
+2025-06-30 16:26:18.525 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:26:18.997 INFO  c.e.d.DataDownloadToolApplicationTests - Started DataDownloadToolApplicationTests in 3.287 seconds (process running for 4.555)
+2025-06-30 16:32:39.982 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.datadownloadtool.DataDownloadToolApplicationTests]: DataDownloadToolApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-06-30 16:32:40.129 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.datadownloadtool.MainApp for test class com.example.datadownloadtool.DataDownloadToolApplicationTests
+2025-06-30 16:32:40.307 INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2025-06-30 16:32:40.605 INFO  c.e.d.DataDownloadToolApplicationTests - Starting DataDownloadToolApplicationTests using Java 17.0.15 with PID 9984 (started by Admin in D:\Working\data-download-tool)
+2025-06-30 16:32:40.606 INFO  c.e.d.DataDownloadToolApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-06-30 16:32:43.151 WARN  java.util.prefs - Could not open/create prefs root node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegCreateKeyEx(...) returned error code 5.
+2025-06-30 16:32:43.154 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002.
+2025-06-30 16:32:43.154 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:32:43.155 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002.
+2025-06-30 16:32:43.155 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:32:43.155 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002.
+2025-06-30 16:32:43.155 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:32:43.155 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002.
+2025-06-30 16:32:43.155 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:32:43.763 INFO  c.e.d.DataDownloadToolApplicationTests - Started DataDownloadToolApplicationTests in 3.469 seconds (process running for 4.74)
+2025-06-30 16:37:04.145 INFO  o.s.boot.SpringApplication - Starting application using Java 17.0.15 with PID 16644 (started by Admin in D:\Working\data-download-tool)
+2025-06-30 16:37:04.148 INFO  o.s.boot.SpringApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-30 16:37:04.207 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-30 16:37:05.162 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-30 16:37:05.176 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-30 16:37:05.177 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-30 16:37:05.178 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-06-30 16:37:05.238 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-30 16:37:05.239 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1030 ms
+2025-06-30 16:37:05.349 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'fileListController': Lookup method resolution failed
+2025-06-30 16:37:05.353 INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-06-30 16:37:05.376 INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-06-30 16:37:05.395 ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'fileListController': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:498)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:368)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1326)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1221)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1187)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1122)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:149)
+	at com.example.datadownloadtool.MainApp.init(MainApp.java:31)
+	at javafx.graphics@21.0.7/com.sun.javafx.application.LauncherImpl.launchApplication1(LauncherImpl.java:817)
+	at javafx.graphics@21.0.7/com.sun.javafx.application.LauncherImpl.lambda$launchApplication$2(LauncherImpl.java:196)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.example.datadownloadtool.controller.ui.FileListController] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@7ba4f24f]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:476)
+	... 23 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/example/datadownloadtool/controller/ui/FileListController$1
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
+	... 25 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.example.datadownloadtool.controller.ui.FileListController$1
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 29 common frames omitted
+2025-06-30 16:37:10.294 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.datadownloadtool.DataDownloadToolApplicationTests]: DataDownloadToolApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-06-30 16:37:10.443 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.datadownloadtool.MainApp for test class com.example.datadownloadtool.DataDownloadToolApplicationTests
+2025-06-30 16:37:10.633 INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2025-06-30 16:37:10.956 INFO  c.e.d.DataDownloadToolApplicationTests - Starting DataDownloadToolApplicationTests using Java 17.0.15 with PID 21432 (started by Admin in D:\Working\data-download-tool)
+2025-06-30 16:37:10.957 INFO  c.e.d.DataDownloadToolApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-06-30 16:37:13.414 WARN  java.util.prefs - Could not open/create prefs root node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegCreateKeyEx(...) returned error code 5.
+2025-06-30 16:37:13.417 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002.
+2025-06-30 16:37:13.418 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:37:13.419 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002.
+2025-06-30 16:37:13.420 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:37:13.421 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002.
+2025-06-30 16:37:13.422 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:37:13.423 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002.
+2025-06-30 16:37:13.424 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:37:13.979 INFO  c.e.d.DataDownloadToolApplicationTests - Started DataDownloadToolApplicationTests in 3.361 seconds (process running for 4.706)
+2025-06-30 16:38:26.238 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.datadownloadtool.DataDownloadToolApplicationTests]: DataDownloadToolApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-06-30 16:38:26.373 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.datadownloadtool.MainApp for test class com.example.datadownloadtool.DataDownloadToolApplicationTests
+2025-06-30 16:38:26.541 INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2025-06-30 16:38:26.839 INFO  c.e.d.DataDownloadToolApplicationTests - Starting DataDownloadToolApplicationTests using Java 17.0.15 with PID 27224 (started by Admin in D:\Working\data-download-tool)
+2025-06-30 16:38:26.840 INFO  c.e.d.DataDownloadToolApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-06-30 16:38:29.256 WARN  java.util.prefs - Could not open/create prefs root node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegCreateKeyEx(...) returned error code 5.
+2025-06-30 16:38:29.258 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002.
+2025-06-30 16:38:29.259 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:38:29.260 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002.
+2025-06-30 16:38:29.260 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:38:29.261 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002.
+2025-06-30 16:38:29.261 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:38:29.262 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002.
+2025-06-30 16:38:29.263 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:38:29.795 INFO  c.e.d.DataDownloadToolApplicationTests - Started DataDownloadToolApplicationTests in 3.267 seconds (process running for 4.474)
+2025-06-30 16:51:20.727 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.datadownloadtool.DataDownloadToolApplicationTests]: DataDownloadToolApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-06-30 16:51:20.861 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.datadownloadtool.MainApp for test class com.example.datadownloadtool.DataDownloadToolApplicationTests
+2025-06-30 16:51:21.059 INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2025-06-30 16:51:21.394 INFO  c.e.d.DataDownloadToolApplicationTests - Starting DataDownloadToolApplicationTests using Java 17.0.15 with PID 31080 (started by Admin in D:\Working\data-download-tool)
+2025-06-30 16:51:21.395 INFO  c.e.d.DataDownloadToolApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-06-30 16:51:23.811 WARN  java.util.prefs - Could not open/create prefs root node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegCreateKeyEx(...) returned error code 5.
+2025-06-30 16:51:23.812 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002.
+2025-06-30 16:51:23.813 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:51:23.813 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002.
+2025-06-30 16:51:23.813 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:51:23.814 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002.
+2025-06-30 16:51:23.814 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:51:23.814 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002.
+2025-06-30 16:51:23.814 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:51:24.324 INFO  c.e.d.DataDownloadToolApplicationTests - Started DataDownloadToolApplicationTests in 3.281 seconds (process running for 4.531)
+2025-06-30 16:54:19.564 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.datadownloadtool.DataDownloadToolApplicationTests]: DataDownloadToolApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-06-30 16:54:19.697 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.datadownloadtool.MainApp for test class com.example.datadownloadtool.DataDownloadToolApplicationTests
+2025-06-30 16:54:19.898 INFO  o.s.b.d.r.RestartApplicationListener - Restart disabled due to context in which it is running
+2025-06-30 16:54:20.282 INFO  c.e.d.DataDownloadToolApplicationTests - Starting DataDownloadToolApplicationTests using Java 17.0.15 with PID 34344 (started by Admin in D:\Working\data-download-tool)
+2025-06-30 16:54:20.283 INFO  c.e.d.DataDownloadToolApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-06-30 16:54:22.715 WARN  java.util.prefs - Could not open/create prefs root node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegCreateKeyEx(...) returned error code 5.
+2025-06-30 16:54:22.716 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002.
+2025-06-30 16:54:22.716 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:54:22.717 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002.
+2025-06-30 16:54:22.717 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:54:22.717 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002.
+2025-06-30 16:54:22.717 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:54:22.717 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002.
+2025-06-30 16:54:22.718 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:54:23.301 INFO  c.e.d.DataDownloadToolApplicationTests - Started DataDownloadToolApplicationTests in 3.409 seconds (process running for 11.455)
+2025-06-30 16:54:44.068 INFO  o.s.boot.SpringApplication - Starting application using Java 17.0.15 with PID 1644 (started by Admin in D:\Working\data-download-tool)
+2025-06-30 16:54:44.070 INFO  o.s.boot.SpringApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-30 16:54:44.111 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-30 16:54:44.835 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-30 16:54:44.846 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-30 16:54:44.847 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-30 16:54:44.848 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-06-30 16:54:44.898 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-30 16:54:44.899 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 787 ms
+2025-06-30 16:54:46.552 WARN  java.util.prefs - Could not open/create prefs root node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegCreateKeyEx(...) returned error code 5.
+2025-06-30 16:54:46.553 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002.
+2025-06-30 16:54:46.553 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:54:46.553 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002.
+2025-06-30 16:54:46.553 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:54:46.554 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002.
+2025-06-30 16:54:46.554 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:54:46.554 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002.
+2025-06-30 16:54:46.554 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:54:46.808 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-30 16:54:46.825 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-30 16:54:46.832 INFO  o.s.boot.SpringApplication - Started application in 3.195 seconds (process running for 4.324)
+2025-06-30 16:54:46.848 INFO  c.example.datadownloadtool.MainApp - >>> START CALLED
+2025-06-30 16:55:28.367 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool\util at root 0xffffffff80000002.
+2025-06-30 16:55:28.367 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool\util at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:56:30.930 INFO  c.e.d.c.ui.MainLayoutController - Refresh clicked
+2025-06-30 16:57:37.942 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-30 16:57:38.033 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-30 16:57:42.208 INFO  o.s.boot.SpringApplication - Starting application using Java 17.0.15 with PID 24916 (started by Admin in D:\Working\data-download-tool)
+2025-06-30 16:57:42.210 INFO  o.s.boot.SpringApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-30 16:57:42.250 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-30 16:57:42.982 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-30 16:57:42.993 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-30 16:57:42.994 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-30 16:57:42.995 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-06-30 16:57:43.048 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-30 16:57:43.048 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 797 ms
+2025-06-30 16:57:44.701 WARN  java.util.prefs - Could not open/create prefs root node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegCreateKeyEx(...) returned error code 5.
+2025-06-30 16:57:44.702 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002.
+2025-06-30 16:57:44.702 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:57:44.703 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002.
+2025-06-30 16:57:44.703 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:57:44.703 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002.
+2025-06-30 16:57:44.704 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:57:44.704 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002.
+2025-06-30 16:57:44.704 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:57:44.961 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-30 16:57:44.978 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-30 16:57:44.984 INFO  o.s.boot.SpringApplication - Started application in 3.205 seconds (process running for 4.377)
+2025-06-30 16:57:45.000 INFO  c.example.datadownloadtool.MainApp - >>> START CALLED
+2025-06-30 16:57:53.464 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool\util at root 0xffffffff80000002.
+2025-06-30 16:57:53.464 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool\util at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:57:56.753 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool\util at root 0xffffffff80000002.
+2025-06-30 16:57:56.754 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool\util at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:59:36.533 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-30 16:59:36.626 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-30 16:59:40.487 INFO  o.s.boot.SpringApplication - Starting application using Java 17.0.15 with PID 33952 (started by Admin in D:\Working\data-download-tool)
+2025-06-30 16:59:40.489 INFO  o.s.boot.SpringApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-30 16:59:40.533 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-06-30 16:59:41.221 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-06-30 16:59:41.231 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-06-30 16:59:41.232 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-30 16:59:41.232 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-06-30 16:59:41.280 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-30 16:59:41.280 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 747 ms
+2025-06-30 16:59:42.917 WARN  java.util.prefs - Could not open/create prefs root node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegCreateKeyEx(...) returned error code 5.
+2025-06-30 16:59:42.918 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002.
+2025-06-30 16:59:42.918 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:59:42.918 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002.
+2025-06-30 16:59:42.919 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:59:42.919 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002.
+2025-06-30 16:59:42.919 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:59:42.919 WARN  java.util.prefs - Trying to recreate Windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002.
+2025-06-30 16:59:42.919 WARN  java.util.prefs - Could not open windows registry node Software\JavaSoft\Prefs\com\example\datadownloadtool at root 0xffffffff80000002. Windows RegOpenKey(...) returned error code 2.
+2025-06-30 16:59:43.164 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-06-30 16:59:43.179 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-06-30 16:59:43.187 INFO  o.s.boot.SpringApplication - Started application in 3.069 seconds (process running for 4.035)
+2025-06-30 16:59:43.208 INFO  c.example.datadownloadtool.MainApp - >>> START CALLED
+2025-06-30 16:59:46.271 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-30 16:59:46.274 INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-06-30 16:59:46.375 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-06-30 16:59:46.376 INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]

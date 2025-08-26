@@ -1,5 +1,6 @@
 package com.example.datadownloadtool.model;
 
+import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.control.ProgressBar;
@@ -24,6 +25,7 @@ public class GroupRow {
     private final Path path;
     @Getter
     private final File groupFolder;
+    private final BooleanProperty isPending;
 
     public GroupRow(String groupName, String createTime, String size, String owner, String groupType, String status, String completeTime, Path path, File groupFolder) {
         this.groupName = new SimpleStringProperty(groupName);
@@ -37,11 +39,15 @@ public class GroupRow {
         this.groupFolder = groupFolder;
         this.progressBar = new ProgressBar(0);
         this.progressBar.setPrefWidth(180);
+        this.isPending = new SimpleBooleanProperty(false); // mặc định là false
+
     }
 
     public void setCompleteTime(String value) { completeTime.set(value); }
     public void setStatus(String value) { status.set(value); }
-
+    public void setIsPending(boolean pending){
+        isPending.set(pending);
+    }
     public boolean isSelected() { return selected.get(); }
     public String getGroupName() { return groupName.get(); }
 
@@ -53,4 +59,10 @@ public class GroupRow {
     public SimpleStringProperty groupTypeProperty() { return groupType; }
     public SimpleStringProperty statusProperty() { return status; }
     public SimpleStringProperty completeTimeProperty() { return completeTime; }
+    public boolean isPending() {
+        return isPending.get();
+    }
+    public BooleanProperty isPendingProperty() {
+        return isPending;
+    }
 }

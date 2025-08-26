@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.datadownloadtool.controller.LoginController"
+      spacing="20.0" alignment="CENTER"
+      prefWidth="400" prefHeight="300"
+      style="-fx-padding: 30; -fx-background-color: #ffffff; -fx-border-color: #ccc; -fx-border-radius: 8; -fx-background-radius: 8;">
+
+    <Label text="Đăng nhập hệ thống" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <TextField fx:id="usernameField"
+               promptText="Tên đăng nhập"
+               prefWidth="300" prefHeight="40"
+               style="-fx-font-size: 14px;"/>
+
+    <PasswordField fx:id="passwordField"
+                   promptText="Mật khẩu"
+                   prefWidth="300" prefHeight="40"
+                   style="-fx-font-size: 14px;"/>
+
+    <Button text="Đăng nhập"
+            onAction="#handleLogin"
+            prefWidth="150" prefHeight="40"
+            style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+
+    <Label fx:id="errorLabel" textFill="red" style="-fx-font-size: 12px;"/>
+</VBox>

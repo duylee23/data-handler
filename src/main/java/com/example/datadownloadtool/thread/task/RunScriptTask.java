@@ -20,7 +20,7 @@ import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 @Slf4j
-public class RunScript2dTldTask implements ScriptTask{
+public class RunScriptTask implements ScriptTask{
     private final File groupFolder;
     private final ProgressBar progressBar;
     private final String scriptPath; // absolute path to .py
@@ -28,7 +28,7 @@ public class RunScript2dTldTask implements ScriptTask{
     private final Consumer<Boolean> onFinish;
     private Process process;
 
-    public RunScript2dTldTask(File groupFolder, ProgressBar progressBar, String scriptPath, String outputPath, Consumer<Boolean> onFinish) {
+    public RunScriptTask(File groupFolder, ProgressBar progressBar, String scriptPath, String outputPath, Consumer<Boolean> onFinish) {
         this.groupFolder = groupFolder;
         this.progressBar = progressBar;
         this.scriptPath = scriptPath;
@@ -48,7 +48,7 @@ public class RunScript2dTldTask implements ScriptTask{
         }
 
         try{
-            System.out.println("Running Python 2D TLD script for group: " + groupFolder.getName());
+            System.out.println("Running Python script for group: " + groupFolder.getName());
 
             String fixedScriptPath = scriptPath.replace(File.separator, "/");
             String inputPath = groupFolder.getAbsolutePath().replace(File.separator, "/");
@@ -59,7 +59,7 @@ public class RunScript2dTldTask implements ScriptTask{
             pb.redirectErrorStream(true);
             Process process = pb.start();
             int pid = (int) process.pid();
-            System.out.println("🔍 Script Python 2D TLD started with PID: " + pid);
+            System.out.println("🔍 Script Python started with PID: " + pid);
 
             final long totalJsonFileFinal = totalJsonFile;
             ScheduledExecutorService scriptProgressScheduler = Executors.newSingleThreadScheduledExecutor();

@@ -1,10 +1,13 @@
-package com.example.datadownloadtool.controller.ui;
+package com.example.datadownloadtool.controller;
 
+import com.example.datadownloadtool.model.User;
 import com.example.datadownloadtool.util.HardwareCheckerUtil;
 import javafx.animation.FadeTransition;
 import javafx.animation.RotateTransition;
+import javafx.application.HostServices;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
@@ -13,21 +16,27 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-
 
 @Component
 @RequiredArgsConstructor
+@Slf4j
 public class MainLayoutController {
     private boolean showingGroupList = false;
     private final FileListController fileListController;
     private final GroupListController groupListController;
+    @Setter
+    private HostServices hostServices;
 
     @FXML private Node fileListView;
     @FXML private Node groupListView;
     @FXML private Button btnFileList;
     @FXML private Button btnGroupList;
     @FXML private ImageView refreshIcon;
+    @FXML private Button adminSpaceButton;
+
     private RotateTransition refreshAnimation;
 
     @FXML
@@ -38,7 +47,7 @@ public class MainLayoutController {
         groupListView.setVisible(false);
         groupListView.setManaged(false);
         btnFileList.getStyleClass().add("active");
-        showSystemInfoPopup();
+//        showSystemInfoPopup();
     }
 
     @FXML public void showFileList() {
@@ -67,6 +76,15 @@ public class MainLayoutController {
         }
     }
 
+    @FXML
+    public void handleAdminSpace(ActionEvent event) {
+        // Mở cửa sổ hoặc scene dành riêng cho admin
+        if (hostServices != null) {
+            hostServices.showDocument("http://localhost:3000/admin/scripts");
+        } else {
+            System.err.println("⚠️ HostServices chưa được truyền vào controller.");
+        }
+    }
 
     private void switchActiveButton(Button oldButton, Button newButton) {
         oldButton.getStyleClass().remove("active");
@@ -96,7 +114,7 @@ public class MainLayoutController {
     }
 
     @FXML public void handleRefresh() {
-        System.out.println("Refresh clicked");
+        log.info("Refresh clicked");
         startRefreshAnimation();
         Task<Void> refreshTask = new Task<>() {
             @Override
@@ -104,12 +122,10 @@ public class MainLayoutController {
                 if (showingGroupList) {
                     if (groupListController != null) {
                         groupListController.refreshGroupList();
-                        System.out.println("Refreshing group list");
                     }
                 } else {
                     if (fileListController != null) {
                         fileListController.refreshFileList();
-                        System.out.println("Refreshing file list");
                     }
                 }
                 Thread.sleep(1000);
@@ -148,5 +164,20 @@ public class MainLayoutController {
                 refreshIcon.setVisible(false);
             }
         });
+    }
+
+    public void setUser(User user) {
+        System.out.println("Set user: " + user.getUsername() + ", role: " + user.getRole());
+        if ("ADMIN".equalsIgnoreCase(user.getRole())) {
+            Platform.runLater(() -> {
+                adminSpaceButton.setVisible(true);
+                adminSpaceButton.setManaged(true);
+            });
+        } else {
+            Platform.runLater(() -> {
+                adminSpaceButton.setVisible(false);
+                adminSpaceButton.setManaged(false);
+            });
+        }
     }
 }

@@ -1,10 +1,30 @@
 spring:
   application:
     name: data-download-tool
-
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/data_handler
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
 app:
   local-storage-path: ./local-storage
   storage:
     rootFolder: data_download
     fileListFolder: file_list
     groupListFolder: group_list
+
+api:
+  base:
+    url: http://localhost:8081
+  timeout:
+    connection: 5
+    request: 10
+
+
